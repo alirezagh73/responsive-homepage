@@ -1,0 +1,105 @@
+.offers {
+
+  &_arrow {
+    display: none;
+  }
+
+  @include sm() {
+    display: flex;
+    position: relative;
+    &_arrow {
+      display: block;
+      position: absolute;
+      bottom: 150px;
+
+      figure {
+        transition:transform .2s linear;
+        &:hover{
+          transform: translateX(10px);
+        }
+        width: 70px;
+        height: 70px;
+
+        img {
+          cursor: pointer;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+
+  &_info {
+    text-align: center;
+
+    width: clamp(200px, 100%, 350px);
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    @include sm() {
+      flex-basis: 600px;
+      text-align: left;
+      padding: 0 150px 0 0;
+      position: relative;
+      top: -120px;
+    }
+    margin: auto;
+  }
+
+  &_property {
+    @include sm() {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: center;
+      margin: 100px 0;
+      padding-left: 10px;
+      //margin-left: 10px;
+    }
+
+    .img_wrapper {
+      box-shadow: 6px 4px 10px 5px #e9e9e9;
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      transition: .1s linear;
+      &:hover{
+        transform: scale(1.1);
+      }
+      @include sm() {
+        width: 280px;
+        height: 280px;
+      }
+
+      &:first-child {
+        visibility: hidden;
+      }
+
+      @include sm() {
+        margin: 0;
+      }
+
+      &:nth-child(even) {
+        background-color: rgba(95, 158, 160, 0.33);
+      }
+    }
+
+    &_card {
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      margin: 20px auto;
+
+
+
+      img {
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+  }
+}
